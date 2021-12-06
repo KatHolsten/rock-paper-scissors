@@ -1,7 +1,5 @@
-
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
+     function computerPlay(a, b, c) {
+        console.log(Math.floor(Math.random() * computerPlay.length));
     }
-    console.log(getRandomInt(3));
-    let computerResponse = getRandomInt(3);
 
+    computerPlay();
