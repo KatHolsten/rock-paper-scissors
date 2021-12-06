@@ -1,5 +1,5 @@
 //user enters a choice into a prompt
-let userChoice = prompt('What do you choose? Rock, Paper or Scissors?');
+let userChoice = prompt('What do you choose? Rock, Paper or Scissors?').toLowerCase();
 console.log('User choice: ' + userChoice);
     
 //computer randomly generates a choice and compares it to userChoice
@@ -34,7 +34,7 @@ console.log('User choice: ' + userChoice);
 
     if (computerChoice === 'scissors' && userChoice === 'paper') {
         alert('Sorry. Scissors cuts paper. You have lost.');
-    }
+    } 
 }
 
 computerPlay();
