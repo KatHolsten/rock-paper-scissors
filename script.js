@@ -1,50 +1,41 @@
+const playerChoice = prompt('What do you choose? Rock, Paper or Scissors?').toLowerCase();
+console.log('Player Choice: ' + playerChoice);
 
-//The computer makes a random selection and returns it's choice.
 function computerPlay() {
     let options = ['rock', 'paper', 'scissors'];
-    let computerSelection = options[Math.floor(Math.random() * options.length)];
-    return computerSelection;
+    let computerChoice = options[Math.floor(Math.random() * options.length)];
+    console.log('Computer choice: ' + computerChoice);
+    return computerChoice;
 }
+
+let result;
 
 function playRound(playerSelection, computerSelection) {
-   if (computerSelection === playerSelection) {
-       console.log('It\'s a tie! Nobody wins. Two rocks.');
-   } 
-   
-   if (computerSelection == 'rock' && playerSelection == 'paper') {
-       console.log('Oooh! You win! Paper covers rock.');
-   }
-   
-   if (computerSelection == 'rock' && playerSelection == 'scissors') {
-       console.log('Awh, sorry. You lose. Rock crushes scissors.');
-   }
-   
-   if (computerSelection == 'paper' && playerSelection == 'rock') {
-       console.log('Aw man, you lose. Paper covers rock.');
-   }
-   
-   if (computerSelection == 'paper' && playerSelection == 'scissors') {
-       console.log('Ooh! You win! Scissors definitely cuts paper.');
-   }
-   
-   if (computerSelection == 'scissors' && playerSelection == 'rock') {
-       console.log('Yay! You win. Rock crushes scissors.');
-   }
-   
-   if (computerSelection == 'scissors' && playerSelection == 'paper') {
-       console.log('Oh no! You lost. Scissors cuts paper.');
-   }
-   
-   if (playerSelection == ' ') {
-       console.log('Please choose between paper, rock or scissors.');
-   }
+    if (playerSelection === computerSelection) {
+        result = 'We have a tie. Nobody wins.';
+        return result;
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        result = 'Rock crushes scissors. You win!';
+        return result;
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        result = 'Paper covers rock. Therefore you win!';
+        return result;
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        result = 'Scissors cuts paper, so YOU WIN!';
+        return result;
+    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+        result = 'Ooh, sorry. Paper covers rock. You have lost.';
+        return result;
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        result = 'Scissors cuts through paper. Computer wins.';
+        return result;
+    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        result = 'Rock crushes scissors. Sorry. You lose.';
+        return result;
+    }
 }
 
-//The user is prompted to enter a selection and the text is converted to all lowercase
-let playerSelection = prompt('What do you choose? Rock, Paper or Scissors?').toLowerCase();
 
-//The result from computerPlay function is stored inside computerSelection variable
-let computerSelection = computerPlay();
-
-playRound();
-
+    const playerSelection = playerChoice;
+    playRound(playerChoice, computerPlay());
+    console.log(result);
